@@ -1,6 +1,7 @@
 name: Ping
 
 on:
+  push:
   schedule:
     - cron: '* * * * *'
 
