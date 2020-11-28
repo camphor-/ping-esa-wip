@@ -1,8 +1,8 @@
-name: Ping unupdated WIP entry
+name: Ping
 
 on:
   schedule:
-    - cron:  '*/1 * * * *'
+    - cron:  '* * * * *'
 
 jobs:
   ping:
@@ -31,5 +31,5 @@ jobs:
         run: |
           go mod download
 
-      - name: Build
+      - name: Ping
         run: go run main.go --dry-run
