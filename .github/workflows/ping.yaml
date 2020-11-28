@@ -2,7 +2,7 @@ name: Ping
 
 on:
   schedule:
-    - cron:  '* * * * *'
+    - cron: '* * * * *'
 
 jobs:
   ping:
@@ -33,3 +33,6 @@ jobs:
 
       - name: Ping
         run: go run main.go --dry-run
+        env:
+          # admin@camph.net で発行したPersonal access token
+          ESA_API_TOKEN: ${{ secrets.ESA_API_TOKEN }}
