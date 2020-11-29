@@ -69,7 +69,7 @@ func postComment(client esa.Client, post esa.Post) error {
 
 記事を更新してShip Itしましょう！
 `
-	body := fmt.Sprintf(bodyTemplate, post.CreatedBy.ScreenName)
+	body := fmt.Sprintf(bodyTemplate, post.UpdatedBy.ScreenName)
 	botUser := "esa_bot"
 	_, err := client.CreateComment(context.Background(), post.Number, esa.CreateCommentParam{
 		BodyMD: body,
