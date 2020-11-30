@@ -10,10 +10,9 @@ import (
 	"github.com/hori-ryota/esa-go/esa"
 )
 
-const teamName = "camphor"
-
 var (
-	dryrun = flag.Bool("dry-run", false, "skip posting comment")
+	dryrun   = flag.Bool("dry-run", false, "skip posting comment")
+	teamName = flag.String("team", "camphor", "team name")
 )
 
 func main() {
@@ -28,7 +27,7 @@ func main() {
 
 	aMonthBefore := time.Now().Add(-30 * 24 * time.Hour)
 
-	client := esa.NewClient(token, teamName)
+	client := esa.NewClient(token, *teamName)
 
 	page := uint(0)
 	for {
